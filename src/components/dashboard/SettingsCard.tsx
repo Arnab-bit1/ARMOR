@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'; // <-- 1. Import useEffect
 import { Settings, ToggleLeft, Monitor, Layout, Bell } from 'lucide-react';
 import { Switch } from '@/components/ui/switch';
 
@@ -6,12 +6,23 @@ export const SettingsCard = () => {
   const [settings, setSettings] = useState({
     liveUpdates: true,
     alertSounds: false,
-    darkThresholds: true,
+    darkTheme: false, // Let's assume it starts in dark mode
     miniLayout: false,
     riskThresholds: true,
     mineLiveSelection: true,
     preferences: false
   });
+
+  // This is the new effect for theme switching
+  // --- 2. ADD THIS useEffect HOOK ---
+  useEffect(() => {
+    const root = window.document.documentElement;
+    if (settings.darkTheme) {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+  }, [settings.darkTheme]); // This effect runs only when darkTheme setting changes
 
   const toggleSetting = (key: keyof typeof settings) => {
     setSettings(prev => ({ ...prev, [key]: !prev[key] }));
@@ -26,7 +37,7 @@ export const SettingsCard = () => {
         </div>
 
         <div className="space-y-4">
-          {/* Live Updates */}
+          {/* ... (Live Updates and Alert Sounds switches remain the same) ... */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Monitor className="h-4 w-4 text-muted-foreground" />
@@ -38,7 +49,6 @@ export const SettingsCard = () => {
             />
           </div>
 
-          {/* Alert Sounds */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Bell className="h-4 w-4 text-muted-foreground" />
@@ -50,19 +60,19 @@ export const SettingsCard = () => {
             />
           </div>
 
-          {/* Dark Thresholds */}
+          {/* Dark Theme Switch */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <ToggleLeft className="h-4 w-4 text-muted-foreground" />
-              <span className="text-sm text-foreground">Dark Thresholds</span>
+              <span className="text-sm text-foreground">High Contrast Theme</span>
             </div>
             <Switch 
-              checked={settings.darkThresholds}
-              onCheckedChange={() => toggleSetting('darkThresholds')}
+              checked={settings.darkTheme}
+              onCheckedChange={() => toggleSetting('darkTheme')}
             />
           </div>
-
-          {/* Mini Layout */}
+          
+          {/* ... (The rest of your component remains the same) ... */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Layout className="h-4 w-4 text-muted-foreground" />
@@ -75,7 +85,7 @@ export const SettingsCard = () => {
           </div>
         </div>
 
-        {/* Configuration Options */}
+        {/* ... (Configuration Options section remains the same) ... */}
         <div className="border-t border-border pt-4 space-y-3">
           <div className="bg-card-dark rounded p-3 border border-border">
             <div className="flex items-center gap-2 mb-2">
