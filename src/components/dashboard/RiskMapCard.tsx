@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Map, Layers } from 'lucide-react';
 import openPitMine from '@/assets/open-pit-mine.png';
-import { MineViewer } from '../MineViewer'; // <-- 1. IMPORT YOUR 3D VIEWER
+import MineViewer from '../MineViewer'; // <-- 1. IMPORT YOUR 3D VIEWER
 
 export const RiskMapCard = () => {
   const [mapView, setMapView] = useState('risk');

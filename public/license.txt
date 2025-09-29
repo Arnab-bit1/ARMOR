@@ -1,0 +1,11 @@
+Model Information:
+* title:	Toquepala Mine - Peru
+* source:	https://sketchfab.com/3d-models/toquepala-mine-peru-962cde22a76f42bd856616473510e9df
+* author:	Dr Carlos Bartesaghi Koc (https://sketchfab.com/Carlosbartesaghikoc)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Toquepala Mine - Peru" (https://sketchfab.com/3d-models/toquepala-mine-peru-962cde22a76f42bd856616473510e9df) by Dr Carlos Bartesaghi Koc (https://sketchfab.com/Carlosbartesaghikoc) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
